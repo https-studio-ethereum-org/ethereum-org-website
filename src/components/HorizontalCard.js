@@ -3,19 +3,6 @@ import styled from "styled-components"
 import { Twemoji } from "react-emoji-render"
 
 const StyledCard = styled.div`
-<<<<<<< HEAD
-  background: ${(props) => props.theme.colors.searchBackground};
-  border-radius: 4px;
-  border: 1px solid ${(props) => props.theme.colors.lightBorder};
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  align-content: flex-start;
-`
-
-const Emoji = styled(Twemoji)`
-  & > img {
-=======
   border-radius: 4px;
   display: flex;
 `
@@ -27,20 +14,14 @@ const Emoji = styled(Twemoji)`
     height: 5em !important;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
->>>>>>> 1d83212d7988cf53713f6ffa3871454937f4b6de
     width: 3em !important;
     height: 3em !important;
   }
 `
 
 const Content = styled.div`
-<<<<<<< HEAD
-  margin-left: 1.3rem;
-  margin-bottom: -1rem;
-=======
   flex: 0 1 75%;
   margin-left: 2rem;
->>>>>>> 1d83212d7988cf53713f6ffa3871454937f4b6de
 `
 
 const Description = styled.p`
