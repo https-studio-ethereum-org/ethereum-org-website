@@ -105,6 +105,12 @@ Ethereum has a large and growing number of tools to help developers build, test,
 - [Documentation](https://embark.status.im/docs/)
 - [GitHub](https://github.com/embark-framework/embark)
 
+**Epirus -** **_A platform for developing, deploying and monitoring blockchain applications on the JVM_**
+
+- [Homepage](https://www.web3labs.com/epirus)
+- [Documentation](https://docs.epirus.io)
+- [GitHub](https://github.com/epirus-io/epirus-cli)
+
 **Waffle -** **_A framework for advanced smart contract development and testing (based on ethers.js)._**
 
 - [getwaffle.io](https://getwaffle.io/)
@@ -160,7 +166,6 @@ Ethereum has a large and growing number of tools to help developers build, test,
 
 **web3j -** **_A Java/Android/Kotlin/Scala integration library for Ethereum._**
 
-- [web3j.io](https://web3j.io)
 - [GitHub](https://github.com/web3j/web3j)
 - [Docs](https://docs.web3j.io/)
 - [Gitter](https://gitter.im/web3j/web3j)
@@ -240,6 +245,7 @@ Ethereum has a large and growing number of tools to help developers build, test,
 **Alchemy -** **_Ethereum API and developer tools._**
 
 - [alchemyapi.io](https://alchemyapi.io)
+- [Documentation](https://docs.alchemyapi.io/)
 - [GitHub](https://github.com/alchemyplatform)
 
 **Infura -** **_The Ethereum API as a service._**
@@ -392,7 +398,7 @@ The Ethereum network is made up of many nodes who run compatible client software
 
 ### Clients {#clients}
 
-**Geth -** **_Ethereum clients written in Go._**
+**Geth -** **_Ethereum client written in Go._**
 
 - [Website](https://geth.ethereum.org/)
 - [GitHub](https://github.com/ethereum/go-ethereum)
@@ -416,6 +422,13 @@ The Ethereum network is made up of many nodes who run compatible client software
 - [GitHub](https://github.com/NethermindEth/nethermind)
 - [Gitter chat](https://gitter.im/nethermindeth/nethermind)
 - [Twitter](https://twitter.com/nethermindeth)
+
+**Trinity -** **_Ethereum client written in Python._**
+
+- [Website](https://trinity.ethereum.org/)
+- [GitHub](https://github.com/ethereum/trinity)
+- [Gitter chat](https://gitter.im/ethereum/trinity)
+- [Twitter](https://twitter.com/trinity_client?lang=en)
 
 ### Running your own node {#running-your-own-node}
 
@@ -518,11 +531,15 @@ The Ethereum network is made up of many nodes who run compatible client software
 - [Youtube - 1 new video / day](https://www.youtube.com/c/eattheblocks)
 - [Website](https://eattheblocks.com)
 
+**Soliditydeveloper.com -** **_Concepts and tutorials for Solidity smart contract development._**
+
+- [Soliditydeveloper.com](https://soliditydeveloper.com/blog)
+
 ### Game-Based Learning {#game-based-learning}
 
 **Cryptozombies -** **_Learn to code games on ethereum._**
 
-- [Cryptozombies.io](https://cryptozombies.io/)
+- [Cryptozombies.io](https://cryptozombies.io/en/solidity)
 
 **Ethernaut -** **_Solidity based wargame where each level is a contract to be hacked._**
 

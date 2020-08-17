@@ -59,7 +59,7 @@ const languageMetadata = {
     "language-english": "Igbo",
   },
   it: {
-    version: 1.0,
+    version: 1.1,
     language: "Italiano",
     "language-english": "Italian",
   },
@@ -73,6 +73,11 @@ const languageMetadata = {
     language: "한국어",
     "language-english": "Korean",
   },
+  lt: {
+    version: 1.0,
+    language: "Lietuvis",
+    "language-english": "Lithuanian",
+  },
   ml: {
     version: 1.1,
     language: "മലയാളം",
@@ -83,7 +88,7 @@ const languageMetadata = {
     language: "Nederlands",
     "language-english": "Dutch",
   },
-  no: {
+  nb: {
     version: 1.1,
     language: "norsk",
     "language-english": "Norwegian",
@@ -93,15 +98,30 @@ const languageMetadata = {
     language: "Polski",
     "language-english": "Polish",
   },
+  pt: {
+    version: 1.0,
+    language: "Português",
+    "language-english": "Portuguese",
+  },
   "pt-br": {
     version: 1.0,
     language: "Português",
     "language-english": "Portuguese (Brazilian)",
   },
+  ro: {
+    version: 1.1,
+    language: "Română",
+    "language-english": "Romanian",
+  },
   ru: {
     version: 1.0,
     language: "Pусский",
     "language-english": "Russian",
+  },
+  se: {
+    version: 1.1,
+    language: "Svenska",
+    "language-english": "Swedish",
   },
   sk: {
     version: 1.1,
@@ -113,20 +133,15 @@ const languageMetadata = {
     language: "Slovenija",
     "language-english": "Slovenian",
   },
-  ro: {
-    version: 1.1,
-    language: "Română",
-    "language-english": "Romanian",
-  },
-  se: {
-    version: 1.1,
-    language: "Svenska",
-    "language-english": "Swedish",
-  },
   tr: {
     version: 1.1,
     language: "Türk",
     "language-english": "Turkish",
+  },
+  uk: {
+    version: 1.1,
+    language: "Українська",
+    "language-english": "Ukranian",
   },
   zh: {
     version: 1.1,
@@ -145,6 +160,7 @@ const languageMetadata = {
 const pagesByLangVersion = {
   1.0: [`index.js`],
   1.1: [`index.js`, `build.js`],
+  // 1.2: [`index.js`, `build.js`, `languages.js`, `what-is-ethereum.js`, `eth.js`],
 }
 
 // Returns language's content version

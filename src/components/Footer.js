@@ -4,7 +4,7 @@ import { useIntl } from "gatsby-plugin-intl"
 import { StaticQuery, graphql } from "gatsby"
 
 import { getLangContentVersion } from "../utils/translations"
-import { getLocaleTimestamp } from "../utils/moment"
+import { getLocaleTimestamp } from "../utils/time"
 import Translation from "./Translation"
 import Link from "./Link"
 import Icon from "./Icon"
@@ -57,6 +57,7 @@ const ListItem = styled.li`
 `
 
 const FooterLink = styled(Link)`
+  text-decoration: none;
   color: ${(props) => props.theme.colors.text200};
   &:after {
     color: ${(props) => props.theme.colors.text200};
@@ -122,6 +123,11 @@ const Footer = () => {
           to: `/eth/`,
           text: "page-home-section-individuals-item-four",
           shouldDisplay: contentVersion >= 1.1,
+        },
+        {
+          to: `/get-eth/`,
+          text: "page-home-section-individuals-item-six",
+          shouldDisplay: contentVersion > 1.1,
         },
         {
           to: `/dapps/`,
@@ -215,6 +221,11 @@ const Footer = () => {
           to: "/en/about/",
           text: "footer-about-us",
           shouldDisplay: true,
+        },
+        {
+          to: "/en/contributing/",
+          text: "contributing",
+          shouldDisplay: contentVersion > 1.1,
         },
         {
           to: "/en/languages/",

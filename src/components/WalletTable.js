@@ -342,7 +342,11 @@ export default WalletTable
 
 export const query = graphql`
   query {
+<<<<<<< HEAD
     argent: file(relativePath: { eq: "home/argent.png" }) {
+=======
+    argent: file(relativePath: { eq: "wallets/argent.png" }) {
+>>>>>>> 1d83212d7988cf53713f6ffa3871454937f4b6de
       childImageSharp {
         fluid(maxWidth: 80) {
           ...GatsbyImageSharpFluid

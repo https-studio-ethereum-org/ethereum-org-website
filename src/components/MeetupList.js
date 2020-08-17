@@ -245,6 +245,12 @@ const meetups = [
     location: "Washington D.C.",
     link: "https://www.meetup.com/DC-Blockchain-Developers/",
   },
+  {
+    title: "Chiang Mai Dapps",
+    emoji: ":thailand:",
+    location: "Chiang Mai",
+    link: "https://www.facebook.com/groups/219236462407862/",
+  },
 ]
 
 const Table = styled.div`
@@ -252,6 +258,7 @@ const Table = styled.div`
 `
 
 const Item = styled(Link)`
+  text-decoration: none;
   display: flex;
   justify-content: space-between;
   color: ${(props) => props.theme.colors.text} !important;
@@ -286,14 +293,14 @@ const RightContainer = styled.div`
   display: flex;
   align-items: right;
   align-content: flex-start;
-  width: 25%;
+  flex: 1 1 25%;
   margin-right: 1rem;
   flex-wrap: wrap;
 `
 const LeftContainer = styled.div`
   display: flex;
-  width: 75%;
-  margin-right: 2rem;
+  flex: 1 1 75%;
+  margin-right: 1rem;
 `
 // TODO create generalized CardList / TableCard
 // TODO prop if ordered list or unordered

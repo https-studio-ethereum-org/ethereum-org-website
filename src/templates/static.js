@@ -5,6 +5,8 @@ import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
 
+import Button from "../components/Button"
+import Contributors from "../components/Contributors"
 import PageMetadata from "../components/PageMetadata"
 import Sidebar from "../components/Sidebar"
 import MeetupList from "../components/MeetupList"
@@ -12,7 +14,7 @@ import RandomAppList from "../components/RandomAppList"
 import Roadmap from "../components/Roadmap"
 import Logo from "../components/Logo"
 import Translation from "../components/Translation"
-import { getLocaleTimestamp } from "../utils/moment"
+import { getLocaleTimestamp } from "../utils/time"
 import { isLangRightToLeft } from "../utils/translations"
 import { Mixins } from "../components/Theme"
 
@@ -159,7 +161,7 @@ const StyledLink = styled.a`
     &:after {
       margin-left: 0.125em;
       margin-right: 0.3em;
-      display: inline-block;
+      display: inline;
       content: "↗";
       transition: all 0.1s ease-in-out;
       font-style: normal;
@@ -231,6 +233,8 @@ const components = {
   RandomAppList,
   Roadmap,
   Logo,
+  Button,
+  Contributors,
 }
 
 const StaticPage = ({ data: { mdx } }) => {

@@ -89,11 +89,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   result.data.allMdx.edges.forEach(({ node }) => {
+    const slug = node.fields.slug
     createPage({
-      path: node.fields.slug,
+      path: slug,
       component: path.resolve(`./src/templates/static.js`),
       context: {
-        slug: node.fields.slug,
+        slug,
         // create `intl` object so `gatsby-plugin-intl` will skip
         // generating language variations for this page
         intl: {
@@ -101,7 +102,41 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           languages: supportedLanguages,
           messages: getMessages("./src/intl/", node.frontmatter.lang),
           routed: true,
-          originalPath: node.fields.slug.substr(3),
+          originalPath: slug.substr(3),
+          redirect: true,
+        },
+      },
+    })
+  })
+
+  // Create conditional pages
+  // Necessary because placing these components within src/pages/
+  // (e.g. src/pages/eth.js ) would overwrite pages generated from markdown,
+  // including all translations (e.g. src/content/translations/de/eth/index.md)
+  // TODO create flexibility as we add more pages
+  const versionTwoPages = [
+    `what-is-ethereum`,
+    `eth`,
+    `wallets/index`,
+    `wallets/find-wallet`,
+  ]
+  versionTwoPages.forEach((page) => {
+    const component = page
+    // Account for nested pages
+    if (page.includes("/index")) {
+      page = page.replace("/index", "")
+    }
+    createPage({
+      path: `/en/${page}/`,
+      component: path.resolve(`./src/pages-conditional/${component}.js`),
+      context: {
+        slug: `/en/${page}/`,
+        intl: {
+          language: `en`,
+          languages: supportedLanguages,
+          messages: getMessages("./src/intl/", "en"),
+          routed: true,
+          originalPath: `/en/${page}/`,
           redirect: true,
         },
       },

@@ -13,6 +13,7 @@ const Section = styled.div`
 `
 
 const Item = styled(Link)`
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -80,7 +81,7 @@ const Roadmap = () => {
             .filter((issue) => {
               for (const label of issue.labels) {
                 if (label.name === "Status: Up Next") {
-                  return true
+                  return issue.state === "open"
                 }
               }
               return false
@@ -90,8 +91,8 @@ const Roadmap = () => {
           const inProgress = issues
             .filter((issue) => {
               // if is an open PR
-              if (!!issue.pull_request && issue.state === "open") {
-                return true
+              if (!!issue.pull_request) {
+                return issue.state === "open"
               }
 
               // if issue is in progress
@@ -136,25 +137,6 @@ const Roadmap = () => {
 
   return (
     <div>
-      <H2>Request a feature</H2>
-      Do you have an idea for how to improve ethereum.org? We'd love to
-      collaborate with you!
-      <ul>
-        <li>
-          <Link to="https://discord.gg/bTCfS8C">Join our Discord server</Link>
-        </li>
-        <li>
-          <Link to="https://github.com/ethereum/ethereum-org-website/issues/new/choose">
-            Create an issue on Github
-          </Link>
-        </li>
-        <li>
-          <Link to="https://twitter.com/ethdotorg">
-            Reach out to us on Twitter
-          </Link>
-        </li>
-      </ul>
-      <H2>Ethereum.org Roadmap</H2>
       <p>
         Ever since the launch of ethereum.org, we strive to be transparent about
         how we operate. This is one of our core values because we believe
@@ -165,13 +147,24 @@ const Roadmap = () => {
         <Link to="https://github.com/ethereum/ethereum-org-website/blob/master/LICENSE">
           source code of this repository is licensed under the MIT License
         </Link>
-        . We use{" "}
+        .
+      </p>
+      <p>
+        We use{" "}
         <Link to="https://github.com/ethereum/ethereum-org-website">
           GitHub
         </Link>
         as our primary project management tool. We organize our tasks in 3
-        categories: in progress, planned and implemented. We do our best to keep
-        the community informed what the status is of a specific task.
+        categories:
+      </p>
+      <ul>
+        <li>in progress</li>
+        <li>planned</li>
+        <li>implemented</li>
+      </ul>
+      <p>
+        We do our best to keep the community informed what the status is of a
+        specific task.
       </p>
       <H3>Work in progress</H3>
       <p>
@@ -200,6 +193,26 @@ const Roadmap = () => {
         .
       </p>
       <IssueSection issues={issues.implemented} />
+      <H2>Request a feature</H2>
+      <p>
+        Do you have an idea for how to improve ethereum.org? We'd love to
+        collaborate with you!
+      </p>
+      <ul>
+        <li>
+          <Link to="https://discord.gg/bTCfS8C">Join our Discord server</Link>
+        </li>
+        <li>
+          <Link to="https://github.com/ethereum/ethereum-org-website/issues/new/choose">
+            Create an issue on Github
+          </Link>
+        </li>
+        <li>
+          <Link to="https://twitter.com/ethdotorg">
+            Reach out to us on Twitter
+          </Link>
+        </li>
+      </ul>
     </div>
   )
 }

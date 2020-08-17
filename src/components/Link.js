@@ -4,14 +4,14 @@ import { Link as IntlLink } from "gatsby-plugin-intl"
 import styled from "styled-components"
 
 import { languageMetadata } from "../utils/translations"
+import { trackCustomEvent } from "../utils/matomo"
 
-// TODO set globally to apply to markdown files
 const ExternalLink = styled.a`
   &:after {
     color: ${(props) => props.theme.colors.primary};
     margin-left: 0.125em;
     margin-right: 0.3em;
-    display: inline-block;
+    display: inline;
     content: "↗";
     transition: all 0.1s ease-in-out;
     font-style: normal;
@@ -38,6 +38,12 @@ const Link = ({
 }) => {
   const isExternal = to.includes("http") || to.includes("mailto:")
 
+  const eventOptions = {
+    eventCategory: `External link`,
+    eventAction: `Clicked`,
+    eventName: to,
+  }
+
   if (isExternal) {
     return hideArrow ? (
       <a
@@ -45,6 +51,7 @@ const Link = ({
         href={to}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackCustomEvent(eventOptions)}
       >
         {children}
       </a>
@@ -54,6 +61,7 @@ const Link = ({
         href={to}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackCustomEvent(eventOptions)}
       >
         {children}
       </ExternalLink>

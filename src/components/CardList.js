@@ -7,9 +7,12 @@ import Link from "./Link"
 const Table = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   box-shadow: ${(props) => props.theme.colors.tableBoxShadow};
+  width: 100%;
+  margin-bottom: 2rem;
 `
 
 const Item = styled(Link)`
+  text-decoration: none;
   display: flex;
   justify-content: space-between;
   color: ${(props) => props.theme.colors.text} !important;
@@ -28,6 +31,7 @@ const Item = styled(Link)`
 const ItemTitle = styled.div``
 
 const ItemDesc = styled.div`
+  font-size: ${(props) => props.theme.fontSizes.s};
   margin-bottom: 0;
   opacity: 0.6;
 `
@@ -39,6 +43,7 @@ const LeftContainer = styled.div`
   margin-right: 2rem;
 `
 const RightContainer = styled.div`
+  flex: 1 0 25%;
   display: flex;
   align-items: center;
   margin-right: 1rem;
@@ -62,9 +67,11 @@ const CardList = ({ content }) => {
               <ItemTitle>{title}</ItemTitle>
               <ItemDesc>{description}</ItemDesc>
             </LeftContainer>
-            <RightContainer>
-              <ItemDesc>{caption}</ItemDesc>
-            </RightContainer>
+            {caption && (
+              <RightContainer>
+                <ItemDesc>{caption}</ItemDesc>
+              </RightContainer>
+            )}
           </Item>
         )
       })}

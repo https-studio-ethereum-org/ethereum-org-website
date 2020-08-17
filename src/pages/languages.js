@@ -24,6 +24,7 @@ const LangContainer = styled.div`
 `
 
 const LangItem = styled(GatsbyLink)`
+  text-decoration: none;
   margin: 1rem 1rem 1rem 0;
   padding: 1rem;
   flex: 0 1 260px;
@@ -103,7 +104,7 @@ const LanguagesPage = () => {
       <LangContainer>
         {translationsCompleted.map((lang) => {
           return (
-            <LangItem to={lang.path} key={lang.language}>
+            <LangItem to={lang.path} key={lang["language-english"]}>
               <LangTitle>{lang["language-english"]}</LangTitle>
               <h4>{lang.language}</h4>
             </LangItem>
@@ -157,7 +158,7 @@ const LanguagesPage = () => {
         </ol>
         <p>
           <Translation id="page-translations-program-question" />{" "}
-          <Link to="https://crowdin.com/project/ethereumfoundation/fil#">
+          <Link to="https://discord.gg/6WX7E97">
             <Translation id="page-translations-program-discord" />
           </Link>{" "}
           <Translation id="page-translations-program-channel" />.

@@ -16,47 +16,68 @@ const Mixin = {
 }
 
 const StyledButton = styled(Link)`
+  text-decoration: none;
   ${Mixin.button}
 `
 const StyledButtonExternal = styled.a`
+  text-decoration: none;
   ${Mixin.button}
 `
 
 const Primary = styled(StyledButton)`
   background-color: ${(props) => props.theme.colors.primary};
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.buttonColor};
   border: 1px solid transparent;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.primaryHover};
+  }
+  &:active {
+    background-color: ${(props) => props.theme.colors.primaryActive};
   }
 `
 const PrimaryExternal = styled(StyledButtonExternal)`
   background-color: ${(props) => props.theme.colors.primary};
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.buttonColor};
   border: 1px solid transparent;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.primaryHover};
   }
+  &:active {
+    background-color: ${(props) => props.theme.colors.primaryActive};
+  }
 `
 
 const Secondary = styled(StyledButton)`
-  background-color: ${(props) => props.theme.colors.white};
-  color: ${(props) => props.theme.colors.primary};
-  border: 1px solid ${(props) => props.theme.colors.secondary};
+  background-color: ${(props) => props.theme.colors.secondaryButtonBackground};
+  color: ${(props) => props.theme.colors.secondaryButtonColor};
+  border: 1px solid ${(props) => props.theme.colors.secondaryButtonBorder};
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.secondary};
+    background-color: ${(props) =>
+      props.theme.colors.secondaryButtonBackgroundHover};
+    color: ${(props) => props.theme.colors.secondaryButtonHoverColor};
+  }
+  &:active {
+    background-color: ${(props) =>
+      props.theme.colors.secondaryButtonBackgroundActive};
+    color: ${(props) => props.theme.colors.secondaryButtonHoverColor};
   }
 `
 const SecondaryExternal = styled(StyledButtonExternal)`
-  background-color: ${(props) => props.theme.colors.white};
-  color: ${(props) => props.theme.colors.primary};
-  border: 1px solid ${(props) => props.theme.colors.secondary};
+  background-color: ${(props) => props.theme.colors.secondaryButtonBackground};
+  color: ${(props) => props.theme.colors.secondaryButtonColor};
+  border: 1px solid ${(props) => props.theme.colors.secondaryButtonBorder};
 
   &:hover {
     background-color: ${(props) => props.theme.colors.secondary};
+    color: ${(props) => props.theme.colors.secondaryButtonHoverColor};
+  }
+  &:active {
+    background-color: ${(props) =>
+      props.theme.colors.secondaryButtonBackgroundActive};
+    color: ${(props) => props.theme.colors.secondaryButtonHoverColor};
   }
 `
 
