@@ -78,7 +78,6 @@ const Card = styled.a`
     background: ${(props) => props.theme.colors.tableBackgroundHover};
     transition: transform 0.1s;
     transform: scale(1.02);
-    }
   }
 `
 
